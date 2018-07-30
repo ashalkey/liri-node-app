@@ -19,12 +19,9 @@
   "homepage": "https://github.com/ashalkey/liri-node-app#readme",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "fs": "0.0.1-security",
     "newsapi": "^2.2.2",
-    "node-cmd": "^3.0.0",
     "node-command-line": "^1.0.2",
     "node-spotify-api": "^1.0.7",
-    "request": "^2.87.0",
-    "twitter": "^1.7.1"
+    "request": "^2.87.0"
   }
 }
