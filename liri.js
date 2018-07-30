@@ -1,5 +1,7 @@
 const dotenv = require("dotenv").config();
 
+const cmd = require('node-command-line');
+
 const request = require('request');
 
 const Spotify = require('node-spotify-api');
@@ -14,7 +16,7 @@ const fs = require('fs');
 
 const newsapi = new NewsAPI(keys.newsapi.key);
 var spotify = new Spotify(keys.spotify);
-var client = new Twitter(keys.twitter);
+// var client = new Twitter(keys.twitter);
 
 var command = process.argv[2];
 var userQuery = process.argv[3];
@@ -125,4 +127,16 @@ else if (command === 'movie-this') {
                     "\n" + "Actors: " + movie.Actors);
             }
         });
+}
+
+if (command === 'do-what-it-says') {
+
+    var text = fs.readFileSync('random.txt', 'utf8');
+
+    var textArr = text.split(', ');
+    
+    console.log('\n');
+    
+    cmd.run('node liri.js ' + textArr[0] + ' "' + textArr[1] + '"');
+ 
 }
